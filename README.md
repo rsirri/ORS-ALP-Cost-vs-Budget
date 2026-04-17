@@ -1,43 +1,40 @@
-## Application Details
-|               |
-| ------------- |
-|**Generation Date and Time**<br>Wed Apr 15 2026 01:29:34 GMT+0000 (Coordinated Universal Time)|
-|**App Generator**<br>SAP Fiori Application Generator|
-|**App Generator Version**<br>1.22.0|
-|**Generation Platform**<br>CLI|
-|**Template Used**<br>Analytical List Page V2|
-|**Service Type**<br>SAP System (ABAP On-Premise)|
-|**Service URL**<br>http://e4d.virtual:443/sap/opu/odata/sap/ZRS_ORS_QUERY_CDS|
-|**Module Name**<br>zors-act-bdg-dist|
-|**Application Title**<br>ORS Actual vs Budget by District|
-|**Namespace**<br>|
-|**UI5 Theme**<br>sap_horizon|
-|**UI5 Version**<br>1.120.23|
-|**Enable TypeScript**<br>False|
-|**Add Eslint configuration**<br>True, see https://www.npmjs.com/package/@sap-ux/eslint-plugin-fiori-tools#rules for the eslint rules.|
-|**Main Entity**<br>ZRS_ORS_QUERY|
-|**Navigation Entity**<br>Results|
+# ORS Actual vs Budget by District
 
-## zors-act-bdg-dist
+Fiori Elements Analytical List Page (ALP) app built on S/4HANA 2023.
 
-ORS Actual vs Budget by District - Financial Dashboard
+## Tech Stack
+- OData V2 via @OData.publish:true on CDS Query view
+- Fiori Elements ALP (sap.suite.ui.generic.template)
+- UI5 version 1.120.23
 
-### Starting the generated app
+## CDS Stack
+- ZRS_SETFULLLIST → ZRS_PROJECT_SET (District/Project hierarchy)
+- ZRS_ORS_WBSELEMENT (WBS elements)
+- ZRS_COSP_COSS_COMBINED (Cost data - COSP + COSS union)
+- ZRS_ORS_ACCTCAT (Account categorization - DL/BE/GA/CO/UN)
+- ZRS_ORS_FINANCIALS_CUBE (@Analytics.dataCategory:#CUBE)
+- ZRS_ORS_QUERY (@Analytics.query:true, @OData.publish:true)
 
--   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  To launch the generated application, run the following from the generated application root folder:
+## Parameters
+- p_gjahr : Fiscal Year
+- p_versn : Version
+- p_period: Period
+- p_fdate : Date From
+- p_tdate : Date To
+- p_setname: District Set Name (Setclass=0106, Subclass=1000)
 
-```
-    npm start
-```
+## Deployment
+- BSP: ZORS_ACT_BUDGET
+- Client 100 (dev) → deploy
+- Client 200 (data) → access with ?sap-client=200
 
-- It is also possible to run the application using mock data that reflects the OData Service URL supplied during application generation.  In order to run the application with Mock Data, run the following from the generated app root folder:
+## Features
+- Analytical table with Plan vs Actual vs Variance
+- Bar chart: Plan vs Actual by Category
+- Visual Filter: Actual by Category (Donut)
+- Totals row at bottom
+- Parameters exposed as filter bar fields
 
-```
-    npm run start-mock
-```
-
-#### Pre-requisites:
-
-1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
-
-
+## Known Limitations
+- KPI tiles: parked (OData V2 parameterized query limitation)
+- Criticality coloring: parked (analytics query CASE restrictions)
