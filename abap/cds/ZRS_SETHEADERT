@@ -1,0 +1,21 @@
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Set Header Text'
+@Metadata.ignorePropagatedAnnotations: true
+@ObjectModel.usageType:{
+    serviceQuality: #X,
+    sizeCategory: #M,
+    dataClass: #MIXED
+}
+@VDM.viewType: #BASIC
+define view entity ZRS_SETHEADERT
+  as select from setheadert
+{
+  key setclass as Setclass,
+  key subclass as Subclass,
+  key setname  as Setname,
+  key langu    as Langu,
+      descript as Descript
+}
+where
+  langu = $session.system_language
