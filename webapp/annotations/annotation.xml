@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ZRS_ORS_QUERY_CDS_VAN">
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult">
+
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>DistrictDisplay</PropertyPath>
+                        <PropertyPath>AcctCategory</PropertyPath>
+                        <PropertyPath>CompanyCode</PropertyPath>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="DL_VarMon">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Value" Path="DL_OverUnderMon"/>
+                        <PropertyValue Property="Criticality" Path="DL_CritMon"/>
+                        <PropertyValue Property="CriticalityRepresentation"
+                            EnumMember="UI.CriticalityRepresentationType/WithoutIcon"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="DL_VarYTD">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Value" Path="DL_OverUnderYTD"/>
+                        <PropertyValue Property="Criticality" Path="DL_CritYTD"/>
+                        <PropertyValue Property="CriticalityRepresentation"
+                            EnumMember="UI.CriticalityRepresentationType/WithoutIcon"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BE_VarYTD">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Value" Path="BE_OverUnderYTD"/>
+                        <PropertyValue Property="Criticality" Path="BE_CritYTD"/>
+                        <PropertyValue Property="CriticalityRepresentation"
+                            EnumMember="UI.CriticalityRepresentationType/WithoutIcon"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="GA_VarYTD">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Value" Path="GA_OverUnderYTD"/>
+                        <PropertyValue Property="Criticality" Path="GA_CritYTD"/>
+                        <PropertyValue Property="CriticalityRepresentation"
+                            EnumMember="UI.CriticalityRepresentationType/WithoutIcon"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="CO_VarYTD">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Value" Path="CO_OverUnderYTD"/>
+                        <PropertyValue Property="Criticality" Path="CO_CritYTD"/>
+                        <PropertyValue Property="CriticalityRepresentation"
+                            EnumMember="UI.CriticalityRepresentationType/WithoutIcon"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BD_VarMon">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Value" Path="BD_OverUnderMon"/>
+                        <PropertyValue Property="Criticality" Path="BD_CritMon"/>
+                        <PropertyValue Property="CriticalityRepresentation"
+                            EnumMember="UI.CriticalityRepresentationType/WithoutIcon"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BD_VarYTD">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Value" Path="BD_OverUnderYTD"/>
+                        <PropertyValue Property="Criticality" Path="BD_CritYTD"/>
+                        <PropertyValue Property="CriticalityRepresentation"
+                            EnumMember="UI.CriticalityRepresentationType/WithoutIcon"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DistrictDisplay"/>
+                            <PropertyValue Property="Label" String="District"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ProjectDisplay"/>
+                            <PropertyValue Property="Label" String="Project"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AcctCategory"/>
+                            <PropertyValue Property="Label" String="Category"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DL_PlanMon"/>
+                            <PropertyValue Property="Label" String="DL Plan Mon $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DL_CostMon"/>
+                            <PropertyValue Property="Label" String="DL Actual Mon $K"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#DL_VarMon"/>
+                            <PropertyValue Property="Label" String="DL Var Mon $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DL_PlanYTD"/>
+                            <PropertyValue Property="Label" String="DL Plan YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DL_CostYTD"/>
+                            <PropertyValue Property="Label" String="DL Actual YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#DL_VarYTD"/>
+                            <PropertyValue Property="Label" String="DL Var YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BE_PlanYTD"/>
+                            <PropertyValue Property="Label" String="BE Plan YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BE_CostYTD"/>
+                            <PropertyValue Property="Label" String="BE Actual YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#BE_VarYTD"/>
+                            <PropertyValue Property="Label" String="BE Var YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="GA_PlanYTD"/>
+                            <PropertyValue Property="Label" String="GA Plan YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="GA_CostYTD"/>
+                            <PropertyValue Property="Label" String="GA Actual YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#GA_VarYTD"/>
+                            <PropertyValue Property="Label" String="GA Var YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CO_PlanYTD"/>
+                            <PropertyValue Property="Label" String="CO Plan YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CO_CostYTD"/>
+                            <PropertyValue Property="Label" String="CO Actual YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#CO_VarYTD"/>
+                            <PropertyValue Property="Label" String="CO Var YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BD_PlanMon"/>
+                            <PropertyValue Property="Label" String="Total Plan Mon $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BD_CostMon"/>
+                            <PropertyValue Property="Label" String="Total Actual Mon $K"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#BD_VarMon"/>
+                            <PropertyValue Property="Label" String="Total Var Mon $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BD_PlanYTD"/>
+                            <PropertyValue Property="Label" String="Total Plan YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BD_CostYTD"/>
+                            <PropertyValue Property="Label" String="Total Actual YTD $K"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#BD_VarYTD"/>
+                            <PropertyValue Property="Label" String="Total Var YTD $K"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.Chart" Qualifier="DefaultChart">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Description" String="ORS Budget vs Actual"/>
+                        <PropertyValue Property="Title" String="Plan vs Actual by Category"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Bar"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection>
+                                <PropertyPath>AcctCategory</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="AcctCategory"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection>
+                                <PropertyPath>BD_PlanYTD</PropertyPath>
+                                <PropertyPath>BD_CostYTD</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="BD_PlanYTD"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                </Record>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="BD_CostYTD"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.SelectionPresentationVariant" Qualifier="Default">
+                    <Record Type="UI.SelectionPresentationVariantType">
+                        <PropertyValue Property="Text" String="Default"/>
+                        <PropertyValue Property="PresentationVariant">
+                            <Record Type="UI.PresentationVariantType">
+                                <PropertyValue Property="Visualizations">
+                                    <Collection>
+                                        <AnnotationPath>@UI.Chart#DefaultChart</AnnotationPath>
+                                        <AnnotationPath>@UI.LineItem</AnnotationPath>
+                                    </Collection>
+                                </PropertyValue>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="SelectionVariant">
+                            <Record Type="UI.SelectionVariantType">
+                                <PropertyValue Property="Text" String="Default"/>
+                                <PropertyValue Property="SelectOptions">
+                                    <Collection/>
+                                </PropertyValue>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.PresentationVariant" Qualifier="Default">
+                    <Record Type="UI.PresentationVariantType">
+                        <PropertyValue Property="Text" String="Default"/>
+                        <PropertyValue Property="Visualizations">
+                            <Collection>
+                                <AnnotationPath>@UI.Chart#DefaultChart</AnnotationPath>
+                                <AnnotationPath>@UI.LineItem</AnnotationPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="KPITotalPlan">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Title" String="Total Plan YTD"/>
+                        <PropertyValue Property="Description" String="Total Budget Plan YTD ($K)"/>
+                        <PropertyValue Property="Value" Path="BD_PlanYTD"/>
+                        <PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Neutral"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.SelectionVariant" Qualifier="KPITotalPlan">
+                    <Record Type="UI.SelectionVariantType">
+                        <PropertyValue Property="Text" String="Total Plan YTD"/>
+                        <PropertyValue Property="SelectOptions"><Collection/></PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Chart" Qualifier="KPITotalPlan">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Total Plan YTD"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection>
+                                <PropertyPath>AcctCategory</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="AcctCategory"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection>
+                                <PropertyPath>BD_PlanYTD</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="BD_PlanYTD"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.PresentationVariant" Qualifier="KPITotalPlan">
+                    <Record Type="UI.PresentationVariantType">
+                        <PropertyValue Property="SortOrder"><Collection/></PropertyValue>
+                        <PropertyValue Property="Visualizations">
+                            <Collection>
+                                <AnnotationPath>@UI.Chart#KPITotalPlan</AnnotationPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.KPI" Qualifier="KPITotalPlan">
+                    <Record Type="UI.KPIType">
+                        <PropertyValue Property="DataPoint" Path="@UI.DataPoint#KPITotalPlan"/>
+                        <PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#KPITotalPlan"/>
+                        <PropertyValue Property="ID" String="KPITotalPlan"/>
+                        <PropertyValue Property="Detail">
+                            <Record Type="UI.KPIDetailType">
+                                <PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#KPITotalPlan"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+                <!-- Visual Filter Chart For AcctCategory -->
+                <Annotation Term="UI.Chart" Qualifier="VisualFilterAcctCat">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Actual by Category"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection><PropertyPath>AcctCategory</PropertyPath></Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="AcctCategory"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection><PropertyPath>BD_CostYTD</PropertyPath></Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="BD_CostYTD"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.PresentationVariant" Qualifier="VisualFilterAcctCat">
+                    <Record Type="UI.PresentationVariantType">
+                        <PropertyValue Property="Visualizations">
+                            <Collection>
+                                <AnnotationPath>@UI.Chart#VisualFilterAcctCat</AnnotationPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+<!-- Visual Filter Company Code -->
+<Annotation Term="UI.Chart" Qualifier="VisualFilterCompCode">
+    <Record Type="UI.ChartDefinitionType">
+        <PropertyValue Property="Title" String="Actual by CompanyCode"/>
+        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Bar"/>
+        <PropertyValue Property="Dimensions">
+            <Collection><PropertyPath>CompanyCode</PropertyPath></Collection>
+        </PropertyValue>
+        <PropertyValue Property="DimensionAttributes">
+            <Collection>
+                <Record Type="UI.ChartDimensionAttributeType">
+                    <PropertyValue Property="Dimension" PropertyPath="CompanyCode"/>
+                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                </Record>
+            </Collection>
+        </PropertyValue>
+        <PropertyValue Property="Measures">
+            <Collection><PropertyPath>BD_CostYTD</PropertyPath></Collection>
+        </PropertyValue>
+        <PropertyValue Property="MeasureAttributes">
+            <Collection>
+                <Record Type="UI.ChartMeasureAttributeType">
+                    <PropertyValue Property="Measure" PropertyPath="BD_CostYTD"/>
+                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                </Record>
+            </Collection>
+        </PropertyValue>
+    </Record>
+</Annotation>
+
+<Annotation Term="UI.PresentationVariant" Qualifier="VisualFilterCompCode">
+    <Record Type="UI.PresentationVariantType">
+        <PropertyValue Property="Visualizations">
+            <Collection>
+                <AnnotationPath>@UI.Chart#VisualFilterCompCode</AnnotationPath>
+            </Collection>
+        </PropertyValue>
+    </Record>
+</Annotation>
+
+            </Annotations>
+
+             <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/AcctCategory">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ZRS_ORS_QUERYResults"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="VisualFilterAcctCat"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="AcctCategory"/>
+                                    <PropertyValue Property="ValueListProperty" String="AcctCategory"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+
+<Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/CompanyCode">
+    <Annotation Term="Common.ValueList">
+        <Record Type="Common.ValueListType">
+            <PropertyValue Property="CollectionPath" String="ZRS_ORS_QUERYResults"/>
+            <PropertyValue Property="PresentationVariantQualifier" String="VisualFilterCompCode"/>
+            <PropertyValue Property="Parameters">
+                <Collection>
+                    <Record Type="Common.ValueListParameterInOut">
+                        <PropertyValue Property="LocalDataProperty" PropertyPath="CompanyCode"/>
+                        <PropertyValue Property="ValueListProperty" String="CompanyCode"/>
+                    </Record>
+                </Collection>
+            </PropertyValue>
+        </Record>
+    </Annotation>
+</Annotations>
+
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

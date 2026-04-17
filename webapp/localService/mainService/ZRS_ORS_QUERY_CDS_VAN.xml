@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zrs_ors_query_cds/$metadata">
+        <edmx:Include Namespace="ZRS_ORS_QUERY_CDS" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zrs_ors_query_cds_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/DL_CritMon">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/DL_CritYTD">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/BE_CritMon">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/BE_CritYTD">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/GA_CritMon">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/GA_CritYTD">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/CO_CritMon">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/CO_CritYTD">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/BD_CritMon">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/BD_CritYTD">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/p_gjahr">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/p_versn">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/p_period">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/p_fdate">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/p_tdate">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/p_setname">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/ID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/TotaledProperties">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult">
+                <Annotation Term="UI.DataPoint" Qualifier="BD_CostMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BD_CostMon"/>
+                        <PropertyValue Property="Title" String="Total Actual (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BD_CostYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BD_CostYTD"/>
+                        <PropertyValue Property="Title" String="Total Actual YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BD_OverUnderMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BD_OverUnderMon"/>
+                        <PropertyValue Property="Title" String="Total Over/Under (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BD_OverUnderYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BD_OverUnderYTD"/>
+                        <PropertyValue Property="Title" String="Total Over/Under YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BD_PlanMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BD_PlanMon"/>
+                        <PropertyValue Property="Title" String="Total Plan (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BD_PlanYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BD_PlanYTD"/>
+                        <PropertyValue Property="Title" String="Total Plan YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BE_CostMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BE_CostMon"/>
+                        <PropertyValue Property="Title" String="BE Actual (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BE_CostYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BE_CostYTD"/>
+                        <PropertyValue Property="Title" String="BE Actual YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BE_OverUnderMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BE_OverUnderMon"/>
+                        <PropertyValue Property="Title" String="BE Over/Under (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BE_OverUnderYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BE_OverUnderYTD"/>
+                        <PropertyValue Property="Title" String="BE Over/Under YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BE_PlanMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BE_PlanMon"/>
+                        <PropertyValue Property="Title" String="BE Plan (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="BE_PlanYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="BE_PlanYTD"/>
+                        <PropertyValue Property="Title" String="BE Plan YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="CO_CostMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="CO_CostMon"/>
+                        <PropertyValue Property="Title" String="CO Actual (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="CO_CostYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="CO_CostYTD"/>
+                        <PropertyValue Property="Title" String="CO Actual YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="CO_OverUnderMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="CO_OverUnderMon"/>
+                        <PropertyValue Property="Title" String="CO Over/Under (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="CO_OverUnderYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="CO_OverUnderYTD"/>
+                        <PropertyValue Property="Title" String="CO Over/Under YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="CO_PlanMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="CO_PlanMon"/>
+                        <PropertyValue Property="Title" String="CO Plan (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="CO_PlanYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="CO_PlanYTD"/>
+                        <PropertyValue Property="Title" String="CO Plan YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="DL_CostMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="DL_CostMon"/>
+                        <PropertyValue Property="Title" String="DL Actual (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="DL_CostYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="DL_CostYTD"/>
+                        <PropertyValue Property="Title" String="DL Actual YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="DL_OverUnderMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="DL_OverUnderMon"/>
+                        <PropertyValue Property="Title" String="DL Over/Under (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="DL_OverUnderYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="DL_OverUnderYTD"/>
+                        <PropertyValue Property="Title" String="DL Over/Under YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="DL_PlanMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="DL_PlanMon"/>
+                        <PropertyValue Property="Title" String="DL Plan (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="DL_PlanYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="DL_PlanYTD"/>
+                        <PropertyValue Property="Title" String="DL Plan YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="GA_CostMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="GA_CostMon"/>
+                        <PropertyValue Property="Title" String="GA Actual (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="GA_CostYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="GA_CostYTD"/>
+                        <PropertyValue Property="Title" String="GA Actual YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="GA_OverUnderMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="GA_OverUnderMon"/>
+                        <PropertyValue Property="Title" String="GA Over/Under (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="GA_OverUnderYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="GA_OverUnderYTD"/>
+                        <PropertyValue Property="Title" String="GA Over/Under YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="GA_PlanMon">
+                    <Record>
+                        <PropertyValue Property="Value" Path="GA_PlanMon"/>
+                        <PropertyValue Property="Title" String="GA Plan (Month $K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="GA_PlanYTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="GA_PlanYTD"/>
+                        <PropertyValue Property="Title" String="GA Plan YTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="UN_CostJTD">
+                    <Record>
+                        <PropertyValue Property="Value" Path="UN_CostJTD"/>
+                        <PropertyValue Property="Title" String="Unclassified JTD ($K)"/>
+                        <PropertyValue Property="ValueFormat">
+                            <Record>
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.PresentationVariant">
+                    <Record>
+                        <PropertyValue Property="SortOrder">
+                            <Collection>
+                                <Record Type="Common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="Project"/>
+                                    <PropertyValue Property="Descending" Bool="false"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

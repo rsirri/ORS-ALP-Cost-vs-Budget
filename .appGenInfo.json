@@ -1,0 +1,32 @@
+{
+  "generationParameters": {
+    "generationDate": "Wed Apr 15 2026 01:29:34 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "CLI",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "http://e4d.virtual:443/sap/opu/odata/sap/ZRS_ORS_QUERY_CDS",
+    "appName": "zors-act-bdg-dist",
+    "appTitle": "ORS Actual vs Budget by District",
+    "appDescription": "ORS Actual vs Budget by District - Financial Dashboard",
+    "appNamespace": "",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.120.23",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.22.0",
+    "template": "Analytical List Page V2",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "ZRS_ORS_QUERY"
+      },
+      {
+        "type": "Navigation Entity",
+        "value": "Results"
+      }
+    ],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}

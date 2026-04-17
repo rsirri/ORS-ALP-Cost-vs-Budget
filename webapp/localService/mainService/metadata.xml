@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZRS_ORS_QUERY_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZRS_ORS_QUERYResult" sap:label="ORS Financial Dashboard Query" sap:semantics="aggregate" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:filterable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Project" Type="Edm.String" MaxLength="24" sap:aggregation-role="dimension" sap:label="Project" sap:quickinfo="Project definition" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ProjectDescription" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:label="Project Description" sap:quickinfo="Project Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LeafSetname" Type="Edm.String" MaxLength="24" sap:aggregation-role="dimension" sap:label="Set Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Setclass" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Set Class" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Setname" Type="Edm.String" MaxLength="24" sap:aggregation-role="dimension" sap:label="Set" sap:quickinfo="Set Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DistrictDisplay" Type="Edm.String" MaxLength="67" sap:aggregation-role="dimension" sap:label="District" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DistrictSetName" Type="Edm.String" MaxLength="24" sap:aggregation-role="dimension" sap:label="District Set Name" sap:quickinfo="Set Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DistrictDescription" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:label="District Description" sap:quickinfo="Short Description of a Set" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ProjectDisplay" Type="Edm.String" MaxLength="65" sap:aggregation-role="dimension" sap:label="Project Display" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="WBSElement" Type="Edm.String" MaxLength="24" sap:aggregation-role="dimension" sap:label="WBS Element" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="WBSDescription" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:label="WBS Description" sap:quickinfo="PS: Short description (1st text line)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="AcctCode" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="Account Code" sap:quickinfo="Account code" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="AcctCodeDesc" Type="Edm.String" MaxLength="100" sap:aggregation-role="dimension" sap:label="Account Description" sap:quickinfo="Account Code Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="AcctCategory" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:label="Account Category" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="wrttp" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:label="Value Type" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Company Code" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Controlling Area" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ProfitCenter" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Profit Center" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:label="Currency" sap:quickinfo="Transaction Currency" sap:creatable="false" sap:updatable="false" sap:value-list="standard" sap:semantics="currency-code"/>
+                <Property Name="DL_PlanMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="DL_PlanMon_F" sap:unit="Currency" sap:updatable="false" sap:label="DL Plan (Month $K)" sap:creatable="false"/>
+                <Property Name="DL_PlanMon_F" Type="Edm.String" MaxLength="60" sap:label="DL Plan (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="DL_CostMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="DL_CostMon_F" sap:unit="Currency" sap:updatable="false" sap:label="DL Actual (Month $K)" sap:creatable="false"/>
+                <Property Name="DL_CostMon_F" Type="Edm.String" MaxLength="60" sap:label="DL Actual (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="DL_OverUnderMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="DL_OverUnderMon_F" sap:unit="DL_OverUnderMon_E" sap:updatable="false" sap:label="DL Over/Under (Month $K)" sap:creatable="false"/>
+                <Property Name="DL_OverUnderMon_F" Type="Edm.String" MaxLength="60" sap:label="DL Over/Under (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="DL_OverUnderMon_E" Type="Edm.String" MaxLength="5" sap:filterable="false" sap:label="DL Over/Under (Month $K) (Currency)" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="DL_PlanYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="DL_PlanYTD_F" sap:unit="Currency" sap:updatable="false" sap:label="DL Plan YTD ($K)" sap:creatable="false"/>
+                <Property Name="DL_PlanYTD_F" Type="Edm.String" MaxLength="60" sap:label="DL Plan YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="DL_CostYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="DL_CostYTD_F" sap:unit="Currency" sap:updatable="false" sap:label="DL Actual YTD ($K)" sap:creatable="false"/>
+                <Property Name="DL_CostYTD_F" Type="Edm.String" MaxLength="60" sap:label="DL Actual YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="DL_OverUnderYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="DL_OverUnderYTD_F" sap:unit="DL_OverUnderYTD_E" sap:updatable="false" sap:label="DL Over/Under YTD ($K)" sap:creatable="false"/>
+                <Property Name="DL_OverUnderYTD_F" Type="Edm.String" MaxLength="60" sap:label="DL Over/Under YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="DL_OverUnderYTD_E" Type="Edm.String" MaxLength="5" sap:filterable="false" sap:label="DL Over/Under YTD ($K) (Currency)" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="BE_PlanMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BE_PlanMon_F" sap:unit="Currency" sap:updatable="false" sap:label="BE Plan (Month $K)" sap:creatable="false"/>
+                <Property Name="BE_PlanMon_F" Type="Edm.String" MaxLength="60" sap:label="BE Plan (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BE_CostMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BE_CostMon_F" sap:unit="Currency" sap:updatable="false" sap:label="BE Actual (Month $K)" sap:creatable="false"/>
+                <Property Name="BE_CostMon_F" Type="Edm.String" MaxLength="60" sap:label="BE Actual (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BE_OverUnderMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BE_OverUnderMon_F" sap:unit="BE_OverUnderMon_E" sap:updatable="false" sap:label="BE Over/Under (Month $K)" sap:creatable="false"/>
+                <Property Name="BE_OverUnderMon_F" Type="Edm.String" MaxLength="60" sap:label="BE Over/Under (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BE_OverUnderMon_E" Type="Edm.String" MaxLength="5" sap:filterable="false" sap:label="BE Over/Under (Month $K) (Currency)" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="BE_PlanYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BE_PlanYTD_F" sap:unit="Currency" sap:updatable="false" sap:label="BE Plan YTD ($K)" sap:creatable="false"/>
+                <Property Name="BE_PlanYTD_F" Type="Edm.String" MaxLength="60" sap:label="BE Plan YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BE_CostYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BE_CostYTD_F" sap:unit="Currency" sap:updatable="false" sap:label="BE Actual YTD ($K)" sap:creatable="false"/>
+                <Property Name="BE_CostYTD_F" Type="Edm.String" MaxLength="60" sap:label="BE Actual YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BE_OverUnderYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BE_OverUnderYTD_F" sap:unit="BE_OverUnderYTD_E" sap:updatable="false" sap:label="BE Over/Under YTD ($K)" sap:creatable="false"/>
+                <Property Name="BE_OverUnderYTD_F" Type="Edm.String" MaxLength="60" sap:label="BE Over/Under YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BE_OverUnderYTD_E" Type="Edm.String" MaxLength="5" sap:filterable="false" sap:label="BE Over/Under YTD ($K) (Currency)" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="GA_PlanMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="GA_PlanMon_F" sap:unit="Currency" sap:updatable="false" sap:label="GA Plan (Month $K)" sap:creatable="false"/>
+                <Property Name="GA_PlanMon_F" Type="Edm.String" MaxLength="60" sap:label="GA Plan (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="GA_CostMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="GA_CostMon_F" sap:unit="Currency" sap:updatable="false" sap:label="GA Actual (Month $K)" sap:creatable="false"/>
+                <Property Name="GA_CostMon_F" Type="Edm.String" MaxLength="60" sap:label="GA Actual (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="GA_OverUnderMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="GA_OverUnderMon_F" sap:unit="GA_OverUnderMon_E" sap:updatable="false" sap:label="GA Over/Under (Month $K)" sap:creatable="false"/>
+                <Property Name="GA_OverUnderMon_F" Type="Edm.String" MaxLength="60" sap:label="GA Over/Under (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="GA_OverUnderMon_E" Type="Edm.String" MaxLength="5" sap:filterable="false" sap:label="GA Over/Under (Month $K) (Currency)" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="GA_PlanYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="GA_PlanYTD_F" sap:unit="Currency" sap:updatable="false" sap:label="GA Plan YTD ($K)" sap:creatable="false"/>
+                <Property Name="GA_PlanYTD_F" Type="Edm.String" MaxLength="60" sap:label="GA Plan YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="GA_CostYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="GA_CostYTD_F" sap:unit="Currency" sap:updatable="false" sap:label="GA Actual YTD ($K)" sap:creatable="false"/>
+                <Property Name="GA_CostYTD_F" Type="Edm.String" MaxLength="60" sap:label="GA Actual YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="GA_OverUnderYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="GA_OverUnderYTD_F" sap:unit="GA_OverUnderYTD_E" sap:updatable="false" sap:label="GA Over/Under YTD ($K)" sap:creatable="false"/>
+                <Property Name="GA_OverUnderYTD_F" Type="Edm.String" MaxLength="60" sap:label="GA Over/Under YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="GA_OverUnderYTD_E" Type="Edm.String" MaxLength="5" sap:filterable="false" sap:label="GA Over/Under YTD ($K) (Currency)" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="CO_PlanMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="CO_PlanMon_F" sap:unit="Currency" sap:updatable="false" sap:label="CO Plan (Month $K)" sap:creatable="false"/>
+                <Property Name="CO_PlanMon_F" Type="Edm.String" MaxLength="60" sap:label="CO Plan (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="CO_CostMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="CO_CostMon_F" sap:unit="Currency" sap:updatable="false" sap:label="CO Actual (Month $K)" sap:creatable="false"/>
+                <Property Name="CO_CostMon_F" Type="Edm.String" MaxLength="60" sap:label="CO Actual (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="CO_OverUnderMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="CO_OverUnderMon_F" sap:unit="CO_OverUnderMon_E" sap:updatable="false" sap:label="CO Over/Under (Month $K)" sap:creatable="false"/>
+                <Property Name="CO_OverUnderMon_F" Type="Edm.String" MaxLength="60" sap:label="CO Over/Under (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="CO_OverUnderMon_E" Type="Edm.String" MaxLength="5" sap:filterable="false" sap:label="CO Over/Under (Month $K) (Currency)" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="CO_PlanYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="CO_PlanYTD_F" sap:unit="Currency" sap:updatable="false" sap:label="CO Plan YTD ($K)" sap:creatable="false"/>
+                <Property Name="CO_PlanYTD_F" Type="Edm.String" MaxLength="60" sap:label="CO Plan YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="CO_CostYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="CO_CostYTD_F" sap:unit="Currency" sap:updatable="false" sap:label="CO Actual YTD ($K)" sap:creatable="false"/>
+                <Property Name="CO_CostYTD_F" Type="Edm.String" MaxLength="60" sap:label="CO Actual YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="CO_OverUnderYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="CO_OverUnderYTD_F" sap:unit="CO_OverUnderYTD_E" sap:updatable="false" sap:label="CO Over/Under YTD ($K)" sap:creatable="false"/>
+                <Property Name="CO_OverUnderYTD_F" Type="Edm.String" MaxLength="60" sap:label="CO Over/Under YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="CO_OverUnderYTD_E" Type="Edm.String" MaxLength="5" sap:filterable="false" sap:label="CO Over/Under YTD ($K) (Currency)" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="BD_PlanMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BD_PlanMon_F" sap:unit="Currency" sap:updatable="false" sap:label="Total Plan (Month $K)" sap:creatable="false"/>
+                <Property Name="BD_PlanMon_F" Type="Edm.String" MaxLength="60" sap:label="Total Plan (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BD_CostMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BD_CostMon_F" sap:unit="Currency" sap:updatable="false" sap:label="Total Actual (Month $K)" sap:creatable="false"/>
+                <Property Name="BD_CostMon_F" Type="Edm.String" MaxLength="60" sap:label="Total Actual (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BD_OverUnderMon" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BD_OverUnderMon_F" sap:unit="BD_OverUnderMon_E" sap:updatable="false" sap:label="Total Over/Under (Month $K)" sap:creatable="false"/>
+                <Property Name="BD_OverUnderMon_F" Type="Edm.String" MaxLength="60" sap:label="Total Over/Under (Month $K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BD_OverUnderMon_E" Type="Edm.String" MaxLength="5" sap:filterable="false" sap:label="Total Over/Under (Month $K) (Currency)" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="BD_PlanYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BD_PlanYTD_F" sap:unit="Currency" sap:updatable="false" sap:label="Total Plan YTD ($K)" sap:creatable="false"/>
+                <Property Name="BD_PlanYTD_F" Type="Edm.String" MaxLength="60" sap:label="Total Plan YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BD_CostYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BD_CostYTD_F" sap:unit="Currency" sap:updatable="false" sap:label="Total Actual YTD ($K)" sap:creatable="false"/>
+                <Property Name="BD_CostYTD_F" Type="Edm.String" MaxLength="60" sap:label="Total Actual YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BD_OverUnderYTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="BD_OverUnderYTD_F" sap:unit="BD_OverUnderYTD_E" sap:updatable="false" sap:label="Total Over/Under YTD ($K)" sap:creatable="false"/>
+                <Property Name="BD_OverUnderYTD_F" Type="Edm.String" MaxLength="60" sap:label="Total Over/Under YTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BD_OverUnderYTD_E" Type="Edm.String" MaxLength="5" sap:filterable="false" sap:label="Total Over/Under YTD ($K) (Currency)" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="UN_CostJTD" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:filterable="false" sap:text="UN_CostJTD_F" sap:unit="Currency" sap:updatable="false" sap:label="Unclassified JTD ($K)" sap:creatable="false"/>
+                <Property Name="UN_CostJTD_F" Type="Edm.String" MaxLength="60" sap:label="Unclassified JTD ($K) (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="DL_CritMon" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:filterable="false" sap:text="DL_CritMon_F" sap:updatable="false" sap:label="DL Mon Criticality" sap:creatable="false"/>
+                <Property Name="DL_CritMon_F" Type="Edm.String" MaxLength="60" sap:label="DL Mon Criticality (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="DL_CritYTD" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:filterable="false" sap:text="DL_CritYTD_F" sap:updatable="false" sap:label="DL YTD Criticality" sap:creatable="false"/>
+                <Property Name="DL_CritYTD_F" Type="Edm.String" MaxLength="60" sap:label="DL YTD Criticality (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BE_CritMon" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:filterable="false" sap:text="BE_CritMon_F" sap:updatable="false" sap:label="BE Mon Criticality" sap:creatable="false"/>
+                <Property Name="BE_CritMon_F" Type="Edm.String" MaxLength="60" sap:label="BE Mon Criticality (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BE_CritYTD" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:filterable="false" sap:text="BE_CritYTD_F" sap:updatable="false" sap:label="BE YTD Criticality" sap:creatable="false"/>
+                <Property Name="BE_CritYTD_F" Type="Edm.String" MaxLength="60" sap:label="BE YTD Criticality (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="GA_CritMon" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:filterable="false" sap:text="GA_CritMon_F" sap:updatable="false" sap:label="GA Mon Criticality" sap:creatable="false"/>
+                <Property Name="GA_CritMon_F" Type="Edm.String" MaxLength="60" sap:label="GA Mon Criticality (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="GA_CritYTD" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:filterable="false" sap:text="GA_CritYTD_F" sap:updatable="false" sap:label="GA YTD Criticality" sap:creatable="false"/>
+                <Property Name="GA_CritYTD_F" Type="Edm.String" MaxLength="60" sap:label="GA YTD Criticality (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="CO_CritMon" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:filterable="false" sap:text="CO_CritMon_F" sap:updatable="false" sap:label="CO Mon Criticality" sap:creatable="false"/>
+                <Property Name="CO_CritMon_F" Type="Edm.String" MaxLength="60" sap:label="CO Mon Criticality (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="CO_CritYTD" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:filterable="false" sap:text="CO_CritYTD_F" sap:updatable="false" sap:label="CO YTD Criticality" sap:creatable="false"/>
+                <Property Name="CO_CritYTD_F" Type="Edm.String" MaxLength="60" sap:label="CO YTD Criticality (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BD_CritMon" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:filterable="false" sap:text="BD_CritMon_F" sap:updatable="false" sap:label="BD Mon Criticality" sap:creatable="false"/>
+                <Property Name="BD_CritMon_F" Type="Edm.String" MaxLength="60" sap:label="BD Mon Criticality (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="BD_CritYTD" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:filterable="false" sap:text="BD_CritYTD_F" sap:updatable="false" sap:label="BD YTD Criticality" sap:creatable="false"/>
+                <Property Name="BD_CritYTD_F" Type="Edm.String" MaxLength="60" sap:label="BD YTD Criticality (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Parameters" Relationship="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYParametersToResult" FromRole="ToRole_ZRS_ORS_QUERYParametersToResult" ToRole="FromRole_ZRS_ORS_QUERYParametersToResult"/>
+            </EntityType>
+            <EntityType Name="ZRS_ORS_QUERYParameters" sap:semantics="parameters" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="p_gjahr"/>
+                    <PropertyRef Name="p_versn"/>
+                    <PropertyRef Name="p_period"/>
+                    <PropertyRef Name="p_fdate"/>
+                    <PropertyRef Name="p_tdate"/>
+                    <PropertyRef Name="p_setname"/>
+                </Key>
+                <Property Name="p_gjahr" Type="Edm.String" Nullable="false" DefaultValue="2024" MaxLength="4" sap:parameter="mandatory" sap:text="p_gjahrText" sap:label="Fiscal Year" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_gjahrText" Type="Edm.String" MaxLength="60" sap:label="Fiscal Year (Description) " sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_versn" Type="Edm.String" Nullable="false" MaxLength="3" sap:parameter="mandatory" sap:text="p_versnText" sap:label="Version" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_versnText" Type="Edm.String" MaxLength="60" sap:label="Version (Description) " sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_period" Type="Edm.String" Nullable="false" DefaultValue="06" MaxLength="2" sap:parameter="mandatory" sap:text="p_periodText" sap:label="Period" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_periodText" Type="Edm.String" MaxLength="60" sap:label="Period (Description) " sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_fdate" Type="Edm.DateTime" Nullable="false" DefaultValue="2024-01-01T00:00:00" Precision="0" sap:display-format="Date" sap:parameter="mandatory" sap:text="p_fdateText" sap:label="Date From" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_fdateText" Type="Edm.String" MaxLength="60" sap:label="Date From (Description) " sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_tdate" Type="Edm.DateTime" Nullable="false" DefaultValue="2024-12-31T00:00:00" Precision="0" sap:display-format="Date" sap:parameter="mandatory" sap:text="p_tdateText" sap:label="Date To" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_tdateText" Type="Edm.String" MaxLength="60" sap:label="Date To (Description) " sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_setname" Type="Edm.String" Nullable="false" DefaultValue="SE2011" MaxLength="12" sap:parameter="mandatory" sap:text="p_setnameText" sap:label="District ID" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="p_setnameText" Type="Edm.String" MaxLength="60" sap:label="District ID (Description) " sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Results" Relationship="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYParametersToResult" FromRole="FromRole_ZRS_ORS_QUERYParametersToResult" ToRole="ToRole_ZRS_ORS_QUERYParametersToResult"/>
+                <NavigationProperty Name="wrttpResults" Relationship="ZRS_ORS_QUERY_CDS.wrttpResultsToParameters" FromRole="FromRole_wrttpResultsToParameters" ToRole="ToRole_wrttpResultsToParameters"/>
+                <NavigationProperty Name="CurrencyResults" Relationship="ZRS_ORS_QUERY_CDS.CurrencyResultsToParameters" FromRole="FromRole_CurrencyResultsToParameters" ToRole="ToRole_CurrencyResultsToParameters"/>
+            </EntityType>
+            <EntityType Name="wrttp" sap:label="Value Type (Master Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="wrttp_ID"/>
+                </Key>
+                <Property Name="wrttp_ID" Type="Edm.String" Nullable="false" MaxLength="2" sap:text="wrttpText" sap:label="Value Type" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="wrttpText" Type="Edm.String" sap:label="Value Type (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="wrttpResult" sap:label="Value Type (Booked Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="wrttp"/>
+                </Key>
+                <Property Name="wrttp" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Value Type" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Project" Type="Edm.String" MaxLength="24" sap:label="Project" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProjectDescription" Type="Edm.String" MaxLength="40" sap:label="Project Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="LeafSetname" Type="Edm.String" MaxLength="24" sap:label="Set Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Setclass" Type="Edm.String" MaxLength="4" sap:label="Set Class" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Setname" Type="Edm.String" MaxLength="24" sap:label="Set" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="DistrictDisplay" Type="Edm.String" MaxLength="67" sap:label="District" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="DistrictSetName" Type="Edm.String" MaxLength="24" sap:label="District Set Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="DistrictDescription" Type="Edm.String" MaxLength="40" sap:label="District Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProjectDisplay" Type="Edm.String" MaxLength="65" sap:label="Project Display" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="WBSElement" Type="Edm.String" MaxLength="24" sap:label="WBS Element" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="WBSDescription" Type="Edm.String" MaxLength="40" sap:label="WBS Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="AcctCode" Type="Edm.String" MaxLength="30" sap:label="Account Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="AcctCodeDesc" Type="Edm.String" MaxLength="100" sap:label="Account Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="AcctCategory" Type="Edm.String" MaxLength="2" sap:label="Account Category" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:label="Company Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:label="Controlling Area" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProfitCenter" Type="Edm.String" MaxLength="10" sap:label="Profit Center" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <NavigationProperty Name="Parameters" Relationship="ZRS_ORS_QUERY_CDS.wrttpResultsToParameters" FromRole="ToRole_wrttpResultsToParameters" ToRole="FromRole_wrttpResultsToParameters"/>
+            </EntityType>
+            <EntityType Name="Currency" sap:label="Currency (Master Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Currency_ID"/>
+                </Key>
+                <Property Name="Currency_ID" Type="Edm.String" Nullable="false" MaxLength="5" sap:text="CurrencyText" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CurrencyText" Type="Edm.String" sap:label="Currency (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="CurrencyResult" sap:label="Currency (Booked Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Currency"/>
+                </Key>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Project" Type="Edm.String" MaxLength="24" sap:label="Project" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProjectDescription" Type="Edm.String" MaxLength="40" sap:label="Project Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="LeafSetname" Type="Edm.String" MaxLength="24" sap:label="Set Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Setclass" Type="Edm.String" MaxLength="4" sap:label="Set Class" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Setname" Type="Edm.String" MaxLength="24" sap:label="Set" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="DistrictDisplay" Type="Edm.String" MaxLength="67" sap:label="District" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="DistrictSetName" Type="Edm.String" MaxLength="24" sap:label="District Set Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="DistrictDescription" Type="Edm.String" MaxLength="40" sap:label="District Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProjectDisplay" Type="Edm.String" MaxLength="65" sap:label="Project Display" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="WBSElement" Type="Edm.String" MaxLength="24" sap:label="WBS Element" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="WBSDescription" Type="Edm.String" MaxLength="40" sap:label="WBS Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="AcctCode" Type="Edm.String" MaxLength="30" sap:label="Account Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="AcctCodeDesc" Type="Edm.String" MaxLength="100" sap:label="Account Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="AcctCategory" Type="Edm.String" MaxLength="2" sap:label="Account Category" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="wrttp" Type="Edm.String" MaxLength="2" sap:label="Value Type" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:label="Company Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:label="Controlling Area" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProfitCenter" Type="Edm.String" MaxLength="10" sap:label="Profit Center" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <NavigationProperty Name="Parameters" Relationship="ZRS_ORS_QUERY_CDS.CurrencyResultsToParameters" FromRole="ToRole_CurrencyResultsToParameters" ToRole="FromRole_CurrencyResultsToParameters"/>
+            </EntityType>
+            <EntityType Name="ODataQueryAdditionalMetadata" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ODataQueryMetadata"/>
+                </Key>
+                <Property Name="ODataQueryMetadata" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ODataQueryMetadataValue_Current" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ODataQueryMetadataValueAtDefine" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="wrttpResultsToParameters" sap:content-version="1">
+                <End Type="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYParameters" Multiplicity="1" Role="FromRole_wrttpResultsToParameters"/>
+                <End Type="ZRS_ORS_QUERY_CDS.wrttpResult" Multiplicity="*" Role="ToRole_wrttpResultsToParameters"/>
+            </Association>
+            <Association Name="CurrencyResultsToParameters" sap:content-version="1">
+                <End Type="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYParameters" Multiplicity="1" Role="FromRole_CurrencyResultsToParameters"/>
+                <End Type="ZRS_ORS_QUERY_CDS.CurrencyResult" Multiplicity="*" Role="ToRole_CurrencyResultsToParameters"/>
+            </Association>
+            <Association Name="ZRS_ORS_QUERYParametersToResult" sap:content-version="1">
+                <End Type="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYParameters" Multiplicity="1" Role="FromRole_ZRS_ORS_QUERYParametersToResult"/>
+                <End Type="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult" Multiplicity="*" Role="ToRole_ZRS_ORS_QUERYParametersToResult"/>
+            </Association>
+            <EntityContainer Name="ZRS_ORS_QUERY_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="wrttp" EntityType="ZRS_ORS_QUERY_CDS.wrttp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="wrttpResults" EntityType="ZRS_ORS_QUERY_CDS.wrttpResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Currency" EntityType="ZRS_ORS_QUERY_CDS.Currency" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CurrencyResults" EntityType="ZRS_ORS_QUERY_CDS.CurrencyResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="AdditionalMetadata" EntityType="ZRS_ORS_QUERY_CDS.ODataQueryAdditionalMetadata" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZRS_ORS_QUERYResults" EntityType="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZRS_ORS_QUERY" EntityType="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYParameters" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="wrttpResultsToParameters_AssocSet" Association="ZRS_ORS_QUERY_CDS.wrttpResultsToParameters" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZRS_ORS_QUERY" Role="FromRole_wrttpResultsToParameters"/>
+                    <End EntitySet="wrttpResults" Role="ToRole_wrttpResultsToParameters"/>
+                </AssociationSet>
+                <AssociationSet Name="CurrencyResultsToParameters_AssocSet" Association="ZRS_ORS_QUERY_CDS.CurrencyResultsToParameters" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZRS_ORS_QUERY" Role="FromRole_CurrencyResultsToParameters"/>
+                    <End EntitySet="CurrencyResults" Role="ToRole_CurrencyResultsToParameters"/>
+                </AssociationSet>
+                <AssociationSet Name="ZRS_ORS_QUERYParametersToResult_AssocSet" Association="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYParametersToResult" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZRS_ORS_QUERY" Role="FromRole_ZRS_ORS_QUERYParametersToResult"/>
+                    <End EntitySet="ZRS_ORS_QUERYResults" Role="ToRole_ZRS_ORS_QUERYParametersToResult"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/wrttp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Type ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="wrttp"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="wrttp"/>
+                                    <PropertyValue Property="ValueListProperty" String="wrttp_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="wrttpText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZRS_ORS_QUERY_CDS.ZRS_ORS_QUERYResult/Currency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Currency ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="Currency"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Currency"/>
+                                    <PropertyValue Property="ValueListProperty" String="Currency_ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CurrencyText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="/sap/opu/odata/sap/ZRS_ORS_QUERY_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="/sap/opu/odata/sap/ZRS_ORS_QUERY_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
